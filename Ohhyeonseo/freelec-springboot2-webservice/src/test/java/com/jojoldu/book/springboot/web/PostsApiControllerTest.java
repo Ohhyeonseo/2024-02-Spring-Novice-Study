@@ -1,6 +1,7 @@
 package com.jojoldu.book.springboot.web;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jojoldu.book.springboot.Application;
 import com.jojoldu.book.springboot.domain.posts.Posts;
 import com.jojoldu.book.springboot.domain.posts.PostsRepository;
 
@@ -39,7 +40,7 @@ import java.util.List;
 import org.springframework.http.MediaType;
 
 @ExtendWith(SpringExtension.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = Application.class)
 public class PostsApiControllerTest {
 
     @LocalServerPort
