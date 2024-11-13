@@ -3,6 +3,7 @@ package com.jojoldu.book.springboot.domain.user;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
+//사용자 권한 관리 enum 클래스
 @Getter
 @RequiredArgsConstructor
 public enum Role {

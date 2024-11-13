@@ -1,9 +1,7 @@
 package com.jojoldu.book.springboot.web.dto;
 
-//버전 때문에 다름
-import com.jojoldu.book.springboot.domain.posts.Posts;
-
-
+import com.jojoldu.book.springboot.domain.posts.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import java.time.LocalDateTime;
 

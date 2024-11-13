@@ -18,19 +18,16 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class IndexController {
 
-    //추가
     private final PostsService postsService;
-    //private final HttpSession httpSession;
+    private final HttpSession httpSession;
 
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
-
-        //SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        //SessionUser user = (SessionUser) httpSession.getAttribute("user"); redundancy remove
         if (user != null){
             model.addAttribute("userName", user.getName());
         }
-
         return "index";
     }
 
@@ -39,7 +36,6 @@ public class IndexController {
         return "posts-save";
     }
 
-    //추가
     @GetMapping("/posts/update/{id}")
     public String postsUpdate(@PathVariable Long id, Model model) {
         PostsResponseDto dto = postsService.findById(id);
@@ -47,5 +43,4 @@ public class IndexController {
 
         return "posts-update";
     }
-
 }
